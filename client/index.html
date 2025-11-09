@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaborative Canvas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="base-canvas"></canvas>
+    <canvas id="working-canvas"></canvas>
+
+    <div id="controls">
+        <label>Width: <input type="range" id="stroke-width" min="1" max="50" value="5"></label>
+        <label>Color: <input type="color" id="stroke-color" value="#000000"></label>
+        
+        <button id="undo-btn">Undo</button>
+        <button id="redo-btn">Redo</button>
+        
+        <div id="tool-modes">
+            <button id="draw-btn" class="active">Draw</button>
+            <button id="erase-btn">Eraser</button>
+            <button id="fill-btn">Bucket Fill</button>
+        </div>
+        
+        <div id="shape-modes">
+            <button id="line-btn">Line</button>
+            <button id="rect-btn">Rect</button>
+            <button id="circle-btn">Circle</button>
+        </div>
+    </div>
+
+    <div id="user-list">Online Users:</div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="module" src="js/canvas.js"></script>
+    <script type="module" src="js/websocket.js"></script>
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
